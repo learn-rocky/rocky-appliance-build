@@ -1,4 +1,4 @@
-#Rocky Linux  Appliance Build
+# Rocky Linux  Appliance Build
 
 Forked from ManageIQ Appliance Build repo in ManageIQ project.
 
