@@ -13,12 +13,11 @@ Below are instructions on configuring a dedicated build machine to generate appl
 
 # Appliance build server
   * CentOS 8.3
-
-  '''
+  ```
   [me@centos8t01 ~]$ cat /etc/redhat-release 
   CentOS Linux release 8.3.2011
   [me@centos8t01 ~]$
-  '''
+  ```
 # Installation
   * Hardware requirements:
     * CPU: 2 cores minimum
