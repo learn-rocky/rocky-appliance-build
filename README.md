@@ -47,8 +47,13 @@ Below are instructions on configuring a dedicated build machine to generate appl
 ## Download CentOS 8 ISO
   * Download latest CentOS 8 ISO from http://isoredirect.centos.org/centos/8/isos/x86_64/
     ```
+    curl -L http://isoredirect.centos.org/centos/8/isos/x86_64/CentOS-8.1.1911-x86_64-dvd1.iso \
+    -o /build/isos/CentOS-8.1.1911-x86_64-dvd1.iso
+    ```
+  * 8.3 for rocky project
+    ```
     curl -L http://bay.uchicago.edu/centos/8.3.2011/isos/x86_64/CentOS-8.3.2011-x86_64-dvd1.iso \
-      -o CentOS-8.3.2011-x86_64-dvd1.iso
+      -o -o /build/isos/CentOS-8.3.2011-x86_64-dvd1.iso
     ```
     
 ## Setup docker-ce to build the image inside container
@@ -58,6 +63,7 @@ Below are instructions on configuring a dedicated build machine to generate appl
     sudo dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
     sudo dnf install -y docker-ce --nobest
     sudo systemctl enable --now docker
+    sudo docker ps -a
     ```
 
   * Login to a registry (for pushing image)
