@@ -24,7 +24,8 @@ Below are instructions on configuring a dedicated build machine to generate appl
     * RAM: 12GB minimum
     * HD: 80GB Minimum - 200GB Recommended
 
-  Get the kickstart from `kickstarts/centos8_build_machine.ks` and adjust it as needed based on your environment and hardware.  Example iPXE boot script for the kickstart:
+  Get the kickstart from `kickstarts/centos8_build_machine.ks` and adjust it as needed
+  based on your environment and hardware.  Example iPXE boot script for the kickstart:
 
   ```
   #!ipxe
@@ -34,20 +35,21 @@ Below are instructions on configuring a dedicated build machine to generate appl
   initrd http://pxeserver.example.com/sources/centos/8/initrd.img
   boot
   ```
+  
 ## Download CentOS 8 ISO
   * Download latest CentOS 8 ISO from http://isoredirect.centos.org/centos/8/isos/x86_64/
     ```
-    curl -L http://isoredirect.centos.org/centos/8/isos/x86_64/CentOS-8.1.1911-x86_64-dvd1.iso \
-      -o /build/isos/CentOS-8.1.1911-x86_64-dvd1.iso
+    curl -L http://bay.uchicago.edu/centos/8.3.2011/isos/x86_64/CentOS-8.3.2011-x86_64-dvd1.iso \
+      -o CentOS-8.3.2011-x86_64-dvd1.iso
     ```
     
-## Setup docker for container build
+## Setup docker-ce to build the image inside container
 
   * Install docker and start service
     ```
-    dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
-    dnf install docker-ce --nobest
-    systemctl enable --now docker
+    sudo dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+    sudo dnf install -y docker-ce --nobest
+    sudo systemctl enable --now docker
     ```
 
   * Login to a registry (for pushing image)
