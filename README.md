@@ -71,6 +71,21 @@ Below are instructions on configuring a dedicated build machine to generate appl
     docker login --username <user> <server> (e.g. docker.io)
     ```
 
+  * Example hub.docker.com
+    ```
+    docker login --username tjyang hub.docke.com
+    [me@centos8t01 manageiq-appliance-build]$ sudo docker login --username myaccount  docker.io
+    Password:
+    WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+    Configure a credential helper to remove this warning. See
+    https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+    
+    Login Succeeded
+    [me@centos8t01 manageiq-appliance-build]$
+
+     sudo ./rpm-build.sh  -t  release -r kasparov-1
+    ```
+
 ## Configure virtualization hardware (if running build machine in a VM)
 
   * Network: NAT or Bridged
