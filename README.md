@@ -1,14 +1,23 @@
-# ManageIQ Appliance Build
+#Rocky Linux  Appliance Build
+
+Forked from ManageIQ Appliance Build repo in ManageIQ project.
 
 [![Build Status](https://api.travis-ci.com/ManageIQ/manageiq-appliance-build.svg)](https://travis-ci.com/ManageIQ/manageiq-appliance-build)
 [![License](http://img.shields.io/badge/license-APACHE2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 # Introduction
 
-This repository contains code to build ManageIQ appliances in the various virtualization formats.
+This repository contains code to build Rocky Linux  appliances in the various virtualization formats.
 
 Below are instructions on configuring a dedicated build machine to generate appliance images.
 
+# Appliance build server
+  * CentOS 8.3
+  '''
+  [me@centos8t01 ~]$ cat /etc/redhat-release 
+  CentOS Linux release 8.3.2011
+  [me@centos8t01 ~]$
+  '''
 # Installation
   * Hardware requirements:
     * CPU: 2 cores minimum
