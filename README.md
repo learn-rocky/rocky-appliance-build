@@ -18,6 +18,14 @@ Below are instructions on configuring a dedicated build machine to generate appl
   CentOS Linux release 8.3.2011
   [me@centos8t01 ~]$
   ```
+  * setup a test account me and let it can do sudo without password
+  ```
+  [me@centos8t01 ~]$ sudo grep ^%wheel /etc/sudoers ;grep wheel /etc/group;id
+  %wheel	ALL=(ALL)	NOPASSWD: ALL
+  wheel:x:10:me,openpkg
+  uid=1000(me) gid=1000(me) groups=1000(me),10(wheel),135(mock)
+  [me@centos8t01 ~]$ 
+  ```
 # Installation
   * Hardware requirements:
     * CPU: 2 cores minimum
