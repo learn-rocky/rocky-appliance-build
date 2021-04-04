@@ -46,8 +46,16 @@ popd
 rm -rf ${MANAGEIQ_SOURCE_DIR}
 git clone -b ${REF} --depth 1 https://github.com/ManageIQ/manageiq ${MANAGEIQ_SOURCE_DIR}
 
+#pushd ${MANAGEIQ_SOURCE_DIR}
+#  docker build --no-cache -t docker.io/manageiq/manageiq:${tag} --build-arg IMAGE_REF=${tag} .
+#  docker push docker.io/manageiq/manageiq:${tag}
+#  docker rmi docker.io/manageiq/manageiq:${tag}
+#popd
+#
+
 pushd ${MANAGEIQ_SOURCE_DIR}
-  docker build --no-cache -t docker.io/manageiq/manageiq:${tag} --build-arg IMAGE_REF=${tag} .
-  docker push docker.io/manageiq/manageiq:${tag}
-  docker rmi docker.io/manageiq/manageiq:${tag}
+  docker build --no-cache -t hub.docker.com/r/manageiq/manageiq-base:${tag} --build-arg IMAGE_REF=${tag} .
+  docker push hub.docker.com/r/manageiq/manageiq-base:${tag}
+  docker rmi hub.docker.com/r/manageiq/manageiq-base:${tag}
 popd
+

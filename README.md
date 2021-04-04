@@ -84,6 +84,8 @@ Below are instructions on configuring a dedicated build machine to generate appl
     [me@centos8t01 manageiq-appliance-build]$
 
      sudo ./rpm-build.sh  -t  release -r kasparov-1
+     [me@centos8t01 manageiq-appliance-build]$ sudo usermod -a -G docker me
+     [me@centos8t01 manageiq-appliance-build]$ sudo bin/rpm-build.sh  -t  release -r
     ```
 
 ## Configure virtualization hardware (if running build machine in a VM)
